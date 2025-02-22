@@ -11,16 +11,19 @@
     /* Animated Background Gradient */
     background-image: linear-gradient(to right, #e60073 0%, #ff6699 50%, #ffbfd9 100%);
     backdrop-filter: blur(20px);
+    overflow: hidden;
 }
-
 /* Left Side - Hero Content */
+/* Hero Content */
 .hero-content {
     flex: 1;
     text-align: left;
     padding-right: 40px;
     margin-left: 4vh;
+    opacity: 0; /* Hide before animation */
+    transform: translateX(-50px); /* Start off-screen */
+    animation: slideIn 1s ease-in-out forwards;
 }
-
 .hero-title {
 }
 
@@ -45,12 +48,49 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    opacity: 0; /* Hide before animation */
+    transform: translateX(50px); /* Start off-screen */
+    animation: slideIn 1s ease-in-out forwards;
 }
-
 .hero-image img {
     width: 80%;
     max-width: 500px;
     border-radius: 10px;
+}
+/* Keyframe Animation for Sliding Effect */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* Image first, text second */
+        text-align: center;
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        order: 2; /* Text second */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-image {
+        order: 1; /* Image first */
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        width: 90%;
+        max-width: 400px;
+    }
 }
 /* How It Works Section */
 .how-it-works {
