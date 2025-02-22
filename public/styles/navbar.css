@@ -1,0 +1,193 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url('animations.css'); /* Import shared animations */
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background-color: #F5FFFA;
+}
+
+/* ========== Navbar ========== */
+.spectacledcoder-navbar {
+
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-image: linear-gradient(to right, #e60073 0%, #ff6699 50%, #ffbfd9 100%);
+    backdrop-filter: blur(20px);
+}
+
+/* Navbar Brand */
+.spectacledcoder-navbar .brand {
+    display: flex;
+    align-items: center;
+}
+
+.spectacledcoder-navbar .brand h1 {
+    /*font-family: "Comforter", cursive;*/
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Navbar Links */
+.spectacledcoder-navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.spectacledcoder-navbar ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.spectacledcoder-navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+
+.spectacledcoder-navbar ul li a:hover {
+    color: #ffd1dc;
+}
+
+/* Underline Effect */
+.rect {
+    width: 0%;
+    height: 2px;
+    /*background-color: white;*/
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
+
+.spectacledcoder-navbar ul li:hover .rect {
+    width: 100%;
+}
+
+/* ========== Mobile Toggle Button ========== */
+.spectacledcoder-navbar .navbar-toggler {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.spectacledcoder-navbar .navbar-toggler div {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+/* ========== Mobile Dropdown ========== */
+.overlay-dropdown {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.overlay-dropdown .brand {
+    text-align: center;
+}
+
+.overlay-dropdown .brand h1 {
+    font-family: "Comforter", cursive;
+    color: black;
+}
+
+.overlay-dropdown ul {
+    list-style: none;
+    padding: 0;
+}
+
+.overlay-dropdown ul li {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.overlay-dropdown ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Show dropdown when active */
+.overlay-dropdown.active {
+    display: flex;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1000px) {
+    .spectacledcoder-navbar ul {
+        display: none;
+    }
+
+    .spectacledcoder-navbar .navbar-toggler {
+        display: flex;
+    }
+
+    .overlay-dropdown ul {
+        width: 60%;
+    }
+
+    .overlay-dropdown ul li a {
+        font-size: 30px;
+    }
+}
+
+/* Footer */
+.footer {
+    background: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+/* Navbar Brand (Logo & Text) */
+.spectacledcoder-navbar .brand {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Image */
+.navbar-logo {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Adjust Text Next to Logo */
+.spectacledcoder-navbar .brand h1 {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
